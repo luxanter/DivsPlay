@@ -1,0 +1,13 @@
+.container {
+	width: 992px;
+	height: 992px;
+	margin-top: 20px;
+}
+.inner {
+	background-color: green;
+	border: 1px solid black;
+	display: table;
+	margin-right: 0px;
+	display: table;
+	float: left;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>DivsPlay</title>
+	<link href='style.css' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+</head>
+<body>
+	<button>Clear</button>
+	<div class="container">
+			<script>
+				$(function ()
+					{
+					var n = parseInt(prompt('The number of cells horizontally and vertically', 16));
+					if (n>100) {
+						alert("It may take some time. Be prepared to wait");
+					}
+					win_w = $(window).width();
+					win_h = $(window).height();
+					for(var i=0; i< n*n; i++){
+						$('.container').append('<div class="inner"></div>');
+					}
+						$('.container').height(win_h);
+						$('.container').width(win_w-4);
+						$('.inner').height(win_h/n);
+						$('.inner').width(win_w/n-2);
+					})
+				$(document).ready(function(){
+				$('.inner').hover(function (){
+					$(this).stop().animate({backgroundColor: 'red'}, 200);});
+				});
+				$('button').click(function () {
+				$('.inner').stop().animate({backgroundColor: 'green'}, 200);});
+			</script>
+	</div>
+</body>
+</html>
